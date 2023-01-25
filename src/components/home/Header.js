@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
     return (
-        <div className="flex content-center justify-between items-center h-32 bg-gradient-to-r from-amber-300 to-orange-600">
+        <div className="flex content-center justify-between items-center h-32 bg-gradient-to-r from-amber-300 to-orange-600 shadow-lg z-50 fixed top-0 left-0 right-0">
             <h3 className="subpixel-antialiased font-mono text-4xl font-bold text-orange-800 p-4 m-4 align-middle">Meme lord</h3>
             <div>
                 <nav className="text-cyan-700">

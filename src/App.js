@@ -5,9 +5,6 @@ function App() {
   return (
     <div>
       <Home />
-      <div>
-        Hello
-      </div>
     </div>
   );
 }
