@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import React from "react";
-import Header from './Header'
+
 
 function UpdateMeme() {
   const [category, setCategory] = useState('');
@@ -34,10 +33,10 @@ function UpdateMeme() {
 
   return (
     <div>
-        <Header />
+     
     
-    <form  className="card h-100 w-20 " onSubmit={handleSubmit}>
-      <label>
+    <form id="form-meme" className="card h-100 w-90 " onSubmit={handleSubmit}>
+      <label >
         ID:
         <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
       </label>
