@@ -10,8 +10,9 @@ function Header() {
             <div>
                 <nav className="text-cyan-700">
                     <ul className="m-0 p-0 list-none overflow-hidden text-2xl">
-                        <NavLink to="/memes" exact>Memes</NavLink>
-                        <li className="inline m-4 p-4 h-4 rounded-lg"><a href="#?" className="m-2 p-4">Generate Meme</a></li>
+                        <NavLink to="/memes" exact className="inline h-4 rounded-lg m-2 p-4">Memes</NavLink>
+                        <NavLink to="/update" exact className="inline h-4 rounded-lg m-2 p-4">Generate Memes</NavLink>
+                        {/* <li className="inline m-4 p-4 h-4 rounded-lg"><a href="#?" className="m-2 p-4">Generate Meme</a></li> */}
                         <li className="inline m-4 p-4 h-4 rounded-lg"><a href="#?" className="m-2 p-4">About</a></li>
                     </ul>
                 </nav>
