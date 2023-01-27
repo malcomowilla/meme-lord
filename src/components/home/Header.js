@@ -11,7 +11,7 @@ function Header() {
                 <nav className="text-cyan-700">
                     <ul className="m-0 p-0 list-none overflow-hidden text-xl">
                         <NavLink to="/memes" exact className="inline h-4 rounded-lg m-2 p-2">Memes</NavLink>
-                        <NavLink to="/update" exact className="inline h-4 rounded-lg m-2 p-2">Add Memes</NavLink>
+                        <NavLink to="/add" exact className="inline h-4 rounded-lg m-2 p-2">Add Memes</NavLink>
                         <NavLink to="/update" exact className="inline h-4 rounded-lg m-2 p-2">Update Meme</NavLink>
                         <li className="inline m-4 p-4 h-4 rounded-lg"><a href="#?" className="m-2 p-4">About</a></li>
                     </ul>
