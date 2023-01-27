@@ -39,6 +39,8 @@ function UpdateMemes() {
                 </button>
             </div>
 
+            {memes.length ? <img src={memes[memeIndex].url} alt="random meme" /> : <></>}
+
             {/**inputs for the captions */}
             {captions.map((caption, index) => (
                 <div className="flex justify-center mt-4" key={index}>
@@ -68,8 +70,6 @@ function UpdateMemes() {
                     </div>
                 </div>
             ))}
-
-            {memes.length ? <img src={memes[memeIndex].url} alt="random meme" /> : <></>}
 
             {/**The Generate Button */}
             <div className="flex space-x-2 justify-center my-6">
