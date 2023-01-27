@@ -2,6 +2,7 @@ import React from "react";
 import {Route, Routes} from 'react-router-dom'
 import Home from './components/home/Home'
 import Memes from './components/memes/Meme'
+import Addmeme from './components/addmeme/addmeme';
 import UpdateMemes from "./components/memes/UpdateMemes";
 import UpdatedMeme from "./components/updatedmemes/UpdatedMeme";
 
@@ -13,6 +14,7 @@ function App() {
           </Route>
           <Route exact path="/memes" element={<Memes/>}>
           </Route>
+          <Route exact path="/add" element={<Addmeme/>}></Route>
           <Route exact path="/update" element={<UpdateMemes/>}></Route>
           <Route exact path="/updated" element={<UpdatedMeme />}></Route>
         </Routes>
