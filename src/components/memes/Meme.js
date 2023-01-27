@@ -34,27 +34,28 @@ function Memes() {
 
     return memes.length ? (
         <div className={styles.container}>
+            <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Browse Memes</h2>
 
-            <div class="flex space-x-2 justify-center">
+            <div className="flex space-x-2 justify-center">
                 <button
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
-                    onClick={() => setMemeIndex(memeIndex + 1)}
-                    class="inline-block px-6 py-2.5 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+                    onClick={() => setMemeIndex(Math.floor(Math.random() * 100) + 1)}
+                    className="inline-block px-6 py-2.5 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
                     skip{" "}
                 </button>
             </div>
 
             <img src={memes[memeIndex].url} alt="random meme" />
 
-            <div class="flex space-x-2 justify-center">
+            <div className="flex space-x-2 justify-center">
                 <button
                     type="button"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                     onClick={handleUpvotes}
-                    class="inline-block px-2 py-2.5 my-4 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+                    className="inline-block px-2 py-2.5 my-4 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
                     &#x2B06;	UPVOTES: {upvotes}
                 </button>
 
@@ -63,7 +64,7 @@ function Memes() {
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                     onClick={handleDownvotes}
-                    class="inline-block px-2 py-2.5 my-4 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orage-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+                    className="inline-block px-2 py-2.5 my-4 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orage-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
                     &#x2B07;    DOWNVOTES: {downvotes}
                 </button>
             </div>
