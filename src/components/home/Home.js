@@ -1,7 +1,7 @@
 import background from '../../img/background.jpg';
 import React from "react";
 import Header from './Header'
-import styles from '../memes/styles.module.css'
+// import styles from '../memes/styles.module.css'
 
 
 function Home(){

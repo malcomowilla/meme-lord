@@ -39,17 +39,6 @@ img {
     display: block;
     box-shadow: 0px 0px 10px black;
 }
-<<<<<<< HEAD
-
- input { 
-     box-sizing: border-box; 
-     display: block; 
-     padding: 10px; 
-     width: 350px; 
-     margin: auto; 
-     margin-bottom: 15px; 
- } 
-=======
 #form-meme{
     margin-left: 40px;
     margin-right: 40px ;
@@ -71,7 +60,6 @@ img {
     /* margin: auto; */
     /* margin-bottom: 15px; */
 /* } */
->>>>>>> origin/addmeme
 
 /* h1 { */
     /* text-align: center; */
