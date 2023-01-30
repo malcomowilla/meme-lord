@@ -12,7 +12,7 @@ This application was built with the following technologies:
 
 ## Running The Live Hosted Application
 
-* open this [link](https://bank-of-flartiorn.netlify.app/) on your browser to access the live web application
+* open this [link](https://lordofmeme.netlify.app/) on your browser to access the live web application
 * you can also follow the link on the right side of the repository below the discription
 * on the browser you will need to search in by typing in order to filder transaction by description and add new transaction on the form below
 
