@@ -18,7 +18,7 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-
+/* 
 button {
     cursor: pointer;
     display: block;
@@ -29,7 +29,7 @@ button {
     color: red;
     border: none;
     border-radius: 10px;
-}
+} */
 
 img {
     max-width: 500px;
@@ -39,6 +39,7 @@ img {
     display: block;
     box-shadow: 0px 0px 10px black;
 }
+<<<<<<< HEAD
 
  input { 
      box-sizing: border-box; 
@@ -48,6 +49,29 @@ img {
      margin: auto; 
      margin-bottom: 15px; 
  } 
+=======
+#form-meme{
+    margin-left: 40px;
+    margin-right: 40px ;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-weight: bolder;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-items: center;
+    border-color: yellowgreen;
+    border-radius: 10px;
+    background-color: rgb(219, 209, 209);
+    box-shadow: 0 4px 8px 0 rgba(255, 217, 4, 0.2), 0 6px 20px 0 rgba(230, 255, 3, 0.19);
+}
+/* input { */
+    /* box-sizing: border-box; */
+    /* display: block; */
+    /* padding: 10px; */
+    /* width: 350px; */
+    /* margin: auto; */
+    /* margin-bottom: 15px; */
+/* } */
+>>>>>>> origin/addmeme
 
 /* h1 { */
     /* text-align: center; */
