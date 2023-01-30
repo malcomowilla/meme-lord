@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useClipboard } from "use-clipboard-copy";
 
+
 function UpdatedMeme() {
     const [copied, setCopied] = useState(false);
 
@@ -18,6 +19,8 @@ function UpdatedMeme() {
 
     return (
         <>
+        
+
             <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Your Memes</h2>
             <div className="flex space-x-2 justify-center mt-6">
                 <button
