@@ -14,6 +14,7 @@ function Header() {
                         <NavLink to="/memes" exact className="inline h-4 rounded-lg m-2 p-2">Memes</NavLink>
                         <NavLink to="/add" exact className="inline h-4 rounded-lg m-2 p-2">Add Memes</NavLink>
                         <NavLink to="/update" exact className="inline h-4 rounded-lg m-2 p-2">Update Meme</NavLink>
+                        <NavLink to="/signup" exact className="inline h-4 rounded-lg m-2 p-2">Signup or Login</NavLink>
                     </ul>
                 </nav>
             </div>
