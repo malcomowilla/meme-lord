@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import background from '../../img/meme-background.jpg';
 const MEMES_API = "https://api.imgflip.com/get_memes";
 
 function UpdateMemes() {
@@ -56,67 +56,71 @@ function UpdateMemes() {
     }, [memeIndex, memes]);
 
     return (
-        <>
-        
+        <div style={{ backgroundImage: `url(${background})`}}  className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">
+             <div>
 
-            <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Update Meme</h2>
-            <div className="flex space-x-2 justify-center mt-6">
-                <button
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    onClick={() => setMemeIndex(Math.floor(Math.random() * 100) + 1)}
-                    className="inline-block px-6 py-2.5 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
-                    skip{" "}
-                </button>
+
+            
+</div>
+
+    <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Update Meme</h2>
+    <div  className="flex space-x-2 justify-center mt-6">
+        <button
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            onClick={() => setMemeIndex(Math.floor(Math.random() * 100) + 1)}
+            className="inline-block px-6 py-2.5 bg-orange-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-orange-900 hover:shadow-lg focus:bg-stone-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-stone-900 active:shadow-lg transition duration-150 ease-in-out">
+            skip{" "}
+        </button>
+    </div>
+
+    {memes.length ? <img src={memes[memeIndex].url} alt="random meme" /> : <></>}
+
+    {/**inputs for the captions */}
+    {captions.map((caption, index) => (
+        <div className="flex justify-center mt-4" key={index}>
+            <div className="mb-3 xl:w-96">
+                <input
+                    type="text"
+                    className="
+              form-control
+              block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+            "
+                    id="exampleText0"
+                    placeholder="captions"
+
+                    onChange={(e) => updateCaption(e, index)} />
             </div>
+        </div>
+    ))}
 
-            {memes.length ? <img src={memes[memeIndex].url} alt="random meme" /> : <></>}
-
-            {/**inputs for the captions */}
-            {captions.map((caption, index) => (
-                <div className="flex justify-center mt-4" key={index}>
-                    <div className="mb-3 xl:w-96">
-                        <input
-                            type="text"
-                            className="
-                      form-control
-                      block
-                      w-full
-                      px-3
-                      py-1.5
-                      text-base
-                      font-normal
-                      text-gray-700
-                      bg-white bg-clip-padding
-                      border border-solid border-gray-300
-                      rounded
-                      transition
-                      ease-in-out
-                      m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
-                    "
-                            id="exampleText0"
-                            placeholder="captions"
-
-                            onChange={(e) => updateCaption(e, index)} />
-                    </div>
-                </div>
-            ))}
-
-            {/**The Generate Button */}
-            <div className="flex space-x-2 justify-center my-6">
-                <button
-                    type="button"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                    onClick={generateMeme}
-                    className="inline-block px-6 py-2.5 bg-amber-300 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-lime-500 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out">
-                    Generate{" "}
-                </button>
-            </div>
-        </>
-    );
+    {/**The Generate Button */}
+    <div className="flex space-x-2 justify-center my-6">
+        <button
+            type="button"
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="light"
+            onClick={generateMeme}
+            className="inline-block px-6 py-2.5 bg-amber-300 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-lime-500 hover:shadow-lg focus:bg-yellow-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-lg transition duration-150 ease-in-out">
+            Generate{" "}
+        </button>
+    </div>
+        </div>
+    )
 }
 
 export default UpdateMemes;
