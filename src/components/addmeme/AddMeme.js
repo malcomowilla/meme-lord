@@ -8,7 +8,7 @@ function AddMeme() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    window.alert('meme added!')
     // create a new form data object
     const formData = new FormData();
     // append the category and image to the form data
@@ -17,7 +17,7 @@ function AddMeme() {
 
     // make the API call to update the meme
     fetch(`https://api.imgflip.com/get_memes${id}`, {
-      method: 'PATCH',
+      method: 'POST',
       body: formData
     })
       .then(response => response.json())
@@ -55,7 +55,7 @@ function AddMeme() {
           <input type="file" onChange={(e) => setImage(e.target.files[0])} />
         </label>
         <br />
-        <button className="btn btn-dark" type="submit">Update Meme</button>
+        <button className="btn btn-dark" type="submit" >Update Meme</button>
       </form>
     </div>
   );
