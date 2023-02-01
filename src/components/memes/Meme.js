@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import background from '../../img/background.jpg';
+import Header from "../home/Header";
 
 function Memes() {
     const [memes, setMemes] = useState([]);
@@ -34,7 +35,11 @@ function Memes() {
     }
 
     return memes.length ? (
-        <div style={{ backgroundImage: `url(${background})`}} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">className={styles.container}>
+
+        <>
+        <Header/>
+        <div id="votememe" style={{ backgroundImage: `url(${background})` }} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans"className={styles.container}>
+
             <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Browse Memes</h2>
 
             <div className="flex space-x-2 justify-center">
@@ -69,7 +74,7 @@ function Memes() {
                     &#x2B07;    DOWNVOTES: {downvotes}
                 </button>
             </div>
-        </div>
+        </div></>
     ) : (
         <></>
     );

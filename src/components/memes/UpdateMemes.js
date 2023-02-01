@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import background from '../../img/meme-background.jpg';
+import Header from "../home/Header";
 const MEMES_API = "https://api.imgflip.com/get_memes";
 
 function UpdateMemes() {
@@ -56,9 +57,13 @@ function UpdateMemes() {
     }, [memeIndex, memes]);
 
     return (
-        <div style={{ backgroundImage: `url(${background})`}}  className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">
+    
+        
+        
+        <div id="updatememe" style={{ backgroundImage: `url(${background})`}}  className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">
+           
              <div>
-
+             <Header/>
 
             
 </div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Header from '../home/Header';
 import background from '../../img/background.jpg';
 
 function AddMeme() {
@@ -33,8 +34,8 @@ function AddMeme() {
   };
 
   return (
-    
-    <div style={{ backgroundImage: `url(${background})`}} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">
+    <><Header />
+    <div style={{ backgroundImage: `url(${background})` }} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col justify-center items-center font-sans">
 
       <h2 className="text-2xl font-semibold tracking-wider text-center text-orange-800 m-2 p-4">Add Meme</h2>
 
@@ -60,7 +61,7 @@ function AddMeme() {
         <br />
         <button className="btn btn-dark" type="submit">Update Meme</button>
       </form>
-    </div>
+    </div></>
   );
 }
 
