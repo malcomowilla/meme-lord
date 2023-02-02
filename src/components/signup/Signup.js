@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import bg from '../../img/background.jpg';
 
 function Register() {
     return (
         <>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mt-32">
+            <h3 className="text-center text-3xl subpixel-antialiased font-bold tracking-wider text-orange-800 mt-4">Signup</h3>
+            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mt-28">
                 <form>
                     <div className="grid grid-cols-2 gap-4">
                         <div class="form-group mb-6">
@@ -52,10 +54,11 @@ function Register() {
     );
 }
 
-function Login() {
+function Login({changeMembership}) {
     return (
         <>
-            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm mt-32">
+            <h3 className="text-center text-3xl subpixel-antialiased font-bold tracking-wider text-orange-800 mt-4">Login</h3>
+            <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm mt-28">
                 <form>
                     <div className="form-group mb-6">
                         <label for="exampleInputEmail2" className="form-label inline-block mb-2 text-gray-700">Email address</label>
@@ -87,8 +90,8 @@ function Login() {
                         transition duration-150 ease-in-out">
                         Sign in
                     </button>
-                    <p className="text-gray-800 mt-6 text-center font-sans">Not a member? <a href="#!"
-                        className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Register</a>
+                    <p className="text-gray-800 mt-6 text-center font-sans">Not a member? <button
+                        className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out" onClick={changeMembership}>Register</button>
                     </p>
                 </form>
             </div>
@@ -98,10 +101,13 @@ function Login() {
 
 function Signup() {
     const [isMember, setMembership] = useState(true);
+    const changeMembership = () => {
+        setMembership(!isMember);
+    }
     return (
-        <div className="flex justify-center content-center">
+        <div style={{ backgroundImage: `url(${bg})`}} className="h-screen bg-cover bg-center md:bg-cover md:bg-center sm:bg-cover sm:bg-center flex flex-col items-center justify-center">
             {/**Conditionally render the components based on user membership */}
-            {isMember ? <Login setMembership={setMembership} /> : <Register />}
+            {isMember ? <Login changeMembership={changeMembership} /> : <Register />}
         </div>
     );
 }
