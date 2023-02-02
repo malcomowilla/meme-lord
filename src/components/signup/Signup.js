@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import bg from '../../img/background.jpg';
 
 function Register() {
@@ -55,21 +56,44 @@ function Register() {
 }
 
 function Login({changeMembership}) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    const handleEmailChange = (e) => {
+        setEmail(() => e.target.value);
+    }
+
+    const handlePassChange = (e) => {
+        setPassword(() => e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(email === "" && password === "")
+            alert ("Please enter necessary details");
+        else {
+            alert("Login successful");
+            navigate("/");
+        }
+    }
+
     return (
         <>
             <h3 className="text-center text-3xl subpixel-antialiased font-bold tracking-wider text-orange-800 mt-4">Login</h3>
             <div className="block p-6 rounded-lg shadow-lg bg-white max-w-sm mt-28">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group mb-6">
                         <label for="exampleInputEmail2" className="form-label inline-block mb-2 text-gray-700">Email address</label>
-                        <input type="email" className="form-control
+                        <input type="email" onChange={handleEmailChange} className="form-control
                             block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out
                             m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email"
                         />
                     </div>
                     <div className="form-group mb-6">
                         <label for="exampleInputPassword2" className="form-label inline-block mb-2 text-gray-700">Password</label>
-                        <input type="password" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded
+                        <input type="password" onChange={handlePassChange} className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded
                             transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputPassword2" placeholder="Password"
                         />
                     </div>
