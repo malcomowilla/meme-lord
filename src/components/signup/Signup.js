@@ -3,14 +3,44 @@ import { useNavigate } from "react-router-dom";
 import bg from '../../img/background.jpg';
 
 function Register() {
+    const [fname, setFirstname] = useState("");
+    const [lname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const navigate = useNavigate();
+
+    const handleFnameChange = (e) => {
+        setFirstname(() => e.target.value);
+    }
+    const handleLnameChange = (e) => {
+        setLastname(() => e.target.value);
+    }
+    const handleEmailChange = (e) => {
+        setEmail(() => e.target.value);
+    }
+    const handlePassChange = (e) => {
+        setPassword(() => e.target.value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (fname === "" && lname === "" && email === "" && password === "")
+            alert("Please make sure all of the fields are entered");
+        else {
+            alert("Signup successful");
+            navigate("/");
+        }
+    }
+
     return (
         <>
             <h3 className="text-center text-3xl subpixel-antialiased font-bold tracking-wider text-orange-800 mt-4">Signup</h3>
             <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mt-28">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className="grid grid-cols-2 gap-4">
                         <div class="form-group mb-6">
-                            <input type="text" className="form-control
+                            <input type="text" value={fname} onChange={handleFnameChange} className="form-control
                                 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding
                                 border border-solid border-gray-300
                                 rounded
@@ -20,20 +50,20 @@ function Register() {
 
                         </div>
                         <div className="form-group mb-6">
-                            <input type="text" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding
+                            <input type="text" value={lname} onChange={handleLnameChange} className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding
                                 border border-solid border-gray-300 rounded
                                 transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124" aria-describedby="emailHelp124" placeholder="Last name"
                             />
                         </div>
                     </div>
                     <div className="form-group mb-6">
-                        <input type="email" className="form-control block w-full px-3 py-1.5
+                        <input type="email" value={email} onChange={handleEmailChange} className="form-control block w-full px-3 py-1.5
                             text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded
                             transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125" placeholder="Email address"
                         />
                     </div>
                     <div className="form-group mb-6">
-                        <input type="password" className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding
+                        <input type="password" value={password} onChange={handlePassChange} className="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding
                             border border-solid border-gray-300 rounded
                             transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126" placeholder="Password"
                         />
